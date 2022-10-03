@@ -1,17 +1,18 @@
 body{
-    background-color: blue;
+    background-color: #999999;
+    font-family: Helvetica;
 }
 h1{
-    color: gold;
+    color: black;
     text-align: center;
 }
 .topnav {
-    background-color: blue ;
+    background-color: black ;
     overflow: hidden;
   }
   .topnav a {
     float: center;
-    color: gold;
+    color: white;
     text-align: right;
     padding: 14px 16px ;
     text-decoration: none;
@@ -24,3 +25,75 @@ h1{
   float: left;
   align-items: stretch;
 }
+.introduct{
+  text-align: center;
+  font-size: ".2cm";
+}
+.chatHead{
+  width: 170px;
+  
+  display: center;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 750px;
+}
+.chat {
+  width: 300px;
+  
+  display: center;
+  flex-direction: column;
+  padding: 10px;
+  padding-left: 700px;
+  padding-top: 100px;
+  
+}
+.oMessage{
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+  background-color: #eee;
+  
+}
+.messages {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  border-radius: 20px;
+  padding: 8px 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display: inline-block;
+}
+
+.yours {
+  align-items: flex-start;
+}
+
+.yours .message {
+  margin-right: 25%;
+  background-color: #eee;
+  position: relative;
+}
+
+
+
+.mine {
+  align-items: flex-end;
+}
+
+.mine .message {
+  color: white;
+  margin-left: 25%;
+  background: linear-gradient(to bottom, #00D0EA 0%, #0085D1 100%);
+  background-attachment: fixed;
+  position: relative;
+}
+
+
+
+
