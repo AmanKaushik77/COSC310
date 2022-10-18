@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="styles.css">
+    <script src = "app.js" defer> </script>
+    <script src = "responses.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Charles.</title>
     <div class = "chatHead">
@@ -22,11 +25,21 @@
             <li><a href="about.html">About</a></li>
         </div>
     </div>
-    <div> <p Class="intro">Please chat with Charles so he can recommend the best Apple product based on your preference! 🤖</div>
+   
+    <div> <p class="intro">Please chat with Charles so he can recommend the best Apple product based on your preference! 🤖</div>
+    
+    
     <div class = "chat">
-        <p class = "oMessage" style = "font-size: .5cm";>Hello my name is Charles, how may I assist you?</p>
-        <div class = "mine messages">
-            <textarea class = "message last" style = "font-family: Helvetica";> Enter here </textarea>
+        <div class = "oMessage">
+            <p  id = "starter" class = "botmsg"></p>
+        </div>
+        <div id = 'chat' class = "oMessage">
+            <p  id = "starter" class = "botmsg"></p>
+        </div>
+        <div id = 'oChat' class = "mine messages">
+            <input id = "usertxt" type = "text" placeholder = "Enter Here"class = "message last" style = "font-family: Helvetica";>  
+            <p></p>
+            <i type = "button" onclick="sendButton()"> Send </i>
         </div>
     </div>
    
