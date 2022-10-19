@@ -2,7 +2,7 @@
 
 
 function introMessage (){
-    let fm = "Hi my name is Charles and I will be assisting you by recommending you an Apple product perfect for you. Lets get stared, what size would be your device (x-small, small, medium, large)?"
+    let fm = "Hi my name is Charles and I will be assisting you by recommending you an Apple product perfect for you. Lets get stared, what type of device are you looking for? (Watch, TV box, Phone, Tablet, Headphones)?"
     document.getElementById("starter").innerHTML = '<p class = "botmsg"> <span>' + fm + '</span></p>';
 }
 
