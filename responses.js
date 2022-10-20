@@ -39,11 +39,25 @@ function getBotResponse(input){
                 return "Got it! what size would you prefer (x-small, small, medium, large)?";
             }
         }
-        // budget for laptop **needs work**
+        // budget for laptop 
         if (productType == 2){
-            if(budget < 100){
+            if(budget < 1300){
                 count = 1;
                 return "sorry nothing fits your budget, try again";
+            }else if(budget >= 1300 && budget < 1500){
+                return "The MacBook Air (M1, 2020) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+            }else if(budget >= 1500 && budget < 2500){
+                budgetType =  1;
+                return "Got it! what size would you prefer (small or large)?";
+            }else if (budget >= 2500 && budget < 3200){
+                budgetType = 2;
+                return "Got it! what size would you prefer (small or large)?";
+            }else if (budget >= 3200 ){
+                budgetType = 3;
+                return "Got it! what size would you prefer (small or large)?"
+            }else{
+                count = 1;
+                return "Sorry, didn't seem to understand, please try again :)"
             }
         }
         // Budget for Phone 
@@ -92,6 +106,35 @@ function getBotResponse(input){
     // size and recomendation 
     if(count == 2){
         
+        // recomendations for laptop
+        if(productType == 2 && budgetType == 1){
+            if(input == "small"){
+                return "The MacBook Air (M1, 2020) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+            }else if(input == "large"){
+                return "The MacBook Air (M2, 2022) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+            }else{
+                count = 2;
+                return "Sorry, didn't seem to understand, please try again :)"
+            }
+        }else if (productType == 2 && budgetType == 2){
+            if(input == "small"){
+                return "The MacBook Air (M2, 2022) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+            }else if(input == "large"){
+                return "The MacBook Pro (2021) 14-in is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+            }else{
+                count = 2;
+                return "Sorry, didn't seem to understand, please try again :)"
+            }
+        } else if(productType == 2 && budgetType == 3){
+            if(input == "small"){
+                return "The MacBook Pro (2021) 14-in is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+            }else if(input == "large"){
+                return "The MacBook Pro (2021) 16-in is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+            }else{
+                count = 2;
+                return "Sorry, didn't seem to understand, please try again :)"
+            }
+        }
         // recomendations for phones
         if(productType == 3 && budgetType == 1){
             if(input == "small"){
