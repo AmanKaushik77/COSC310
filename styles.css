@@ -80,7 +80,9 @@ h1{
   background-color: #eee;
   position: relative;
 }
-
+div.center {
+  text-align: center;
+}
 
 
 .mine {

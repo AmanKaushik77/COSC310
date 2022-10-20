@@ -10,14 +10,12 @@ function getBotResponse(input){
         count++;
         if(input == "watch"){
             productType = 1;
-            
             return "you chose watch, what is your budget?";
         }else if (input == "laptop"){
             productType = 2;
             return "you chose laptop, what is your budget?";
         }else if (input == "phone" || input == "phones" || input == "iphone"){
             productType = 3;
-
             return "you chose phone, what is your budget?";
         }else if (input == "tablet" || input == "ipad"){
             productType = 4;
@@ -83,7 +81,6 @@ function getBotResponse(input){
                 count = 1;
                 return "Sorry, didn't seem to understand, please try again :)"
             }
-
         }
         //Budget for tablet 
         if (productType == 4){
@@ -107,7 +104,6 @@ function getBotResponse(input){
     }
     // size and recomendation 
     if(count == 2){
-        
         // recomendations for laptop
         if(productType == 2 && budgetType == 1){
             if(input == "small"){
@@ -187,7 +183,6 @@ function getBotResponse(input){
                 return "Sorry, didn't seem to understand, please try again :)"
             }
         }
-
         // recommendations for tablets
         if(productType == 4 && budgetType == 1){
             return "The IPad Generation 9 and Generation 10 are the devices for you! They fit the information you have provided, and more information about and comparisons between these devices can be found at the apple website.";
