@@ -3,6 +3,8 @@ var budgetType = 0;
 var count = 0;
 var budget
 function getBotResponse(input){
+    input = input.toLowerCase();
+    input = input.trim();
     // type of product
     if(count == 0){
         count++;
