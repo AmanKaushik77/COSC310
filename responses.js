@@ -1,12 +1,16 @@
-var productType = 0;
-var budgetType = 0;
-var count = 0;
-var budget
-function getBotResponse(input){
+var productType = 0;            // object identifier
+var budgetType = 0;             // keeps track of the users budger (1 being low, x number being high)
+var count = 0;                  // keeps track of how many convos have been made
+var budget;
+const ptKeys = ["watch", "laptop", "phone", "iphone", "tablet", "ipad"];
+const sizeKeys = ["x-small", "small", "medium", "large"];
+
+function getBotResponse(input){     // Charles, hard responses that will be send to back to the app.js file
     input = input.toLowerCase();
-    input = input.trim();
+    //input = input.trim();
+    input = getKey(input);
     // type of product
-    if(count == 0){
+    if(count == 0){    // convo 1, identifying product type form user  
         count++;
         if(input == "watch"){
             productType = 1;
@@ -25,8 +29,8 @@ function getBotResponse(input){
             return "Sorry, didn't seem to understand, please try again :)"
         }
     }
-    // getting budget 
-    if (count == 1){
+    
+    if (count == 1){    // convo 2, identifying budgetType from user   
         var budget = parseInt(input);
         count ++;
         // budget for watch **needs work**
@@ -102,8 +106,8 @@ function getBotResponse(input){
             }
         }
     }
-    // size and recomendation 
-    if(count == 2){
+    
+    if(count == 2){ // convo 2, idenfying the size the user wants and recomend the ideal product 
         // recomendations for laptop
         if(productType == 2 && budgetType == 1){
             if(input == "small"){
@@ -209,4 +213,26 @@ function getBotResponse(input){
         }
 
     }
+}
+
+function getKey(sen) {
+    
+    if(count == 0 ){
+        for(var i = 0; i < ptKeys.length; i++){
+            if(sen.includes(ptKeys[i])){
+                return ptKeys[i];
+            }
+        }
+    }
+    if (count == 2){
+        for(var i=0; i<sizeKeys.length; i++){
+            if(sen.includes(sizeKeys[i])){
+                return sizeKeys[i];
+            }
+        }
+    }
+     if(count == 1){
+        return sen;
+    }
+
 }
