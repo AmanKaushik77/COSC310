@@ -41,13 +41,10 @@ function getBotResponse(input){     // Charles, hard responses that will be send
             }else if (budget >= 330 && budget < 530){
                 return "The Apple Watch SE is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
             }else if (budget >= 530 && budget < 1099){
-                budgetType = 1;
                 return "The Apple Watch Series 8 is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.?";
             }else if (budget >= 1099 && budget < 1629){
-                budgetType = 2;
                 return "The Apple Watch Ultra is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
             }else if (budget >= 1629 ){
-                budgetType = 3;
                 return "The Apple Watch Hermès is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
             }else{
                 count = 1;
@@ -119,7 +116,7 @@ function getBotResponse(input){     // Charles, hard responses that will be send
         }
     }
     
-    if(count == 2){ // convo 2, idenfying the size the user wants and recomend the ideal product 
+    if(count == 2){ // convo 2, idenfying the size the user wants and reccomend the ideal product 
         // recomendations for laptop
         if(productType == 2 && budgetType == 1){
             if(input == "small"){
