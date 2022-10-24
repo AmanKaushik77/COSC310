@@ -31,18 +31,30 @@ function getBotResponse(input){
         count ++;
         // budget for watch **needs work**
         if (productType == 1){
-            if(budget < 300){
+            if(budget < 330){
                 count = 1;
                 return "sorry nothing fits your budget, try again";
-            }else if (budget >= 300 && budget < 700){
+            }else if (budget >= 330 && budget < 530){
+                return "The Apple Watch SE is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+            }else if (budget >= 530 && budget < 1099){
                 budgetType = 1;
-                return "Got it! what size would you prefer (x-small, small, medium, large)?";
+                return "The Apple Watch Series 8 is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.?";
+            }else if (budget >= 1099 && budget < 1629){
+                budgetType = 2;
+                return "The Apple Watch Ultra is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+            }else if (budget >= 1629 ){
+                budgetType = 3;
+                return "The Apple Watch Hermès is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+            }else{
+                count = 1;
+                return "Sorry, didn't seem to understand, please try again :)"
             }
         }
         // budget for laptop 
         if (productType == 2){
             if(budget < 1300){
                 count = 1;
+                
                 return "sorry nothing fits your budget, try again";
             }else if(budget >= 1300 && budget < 1500){
                 return "The MacBook Air (M1, 2020) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
