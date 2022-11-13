@@ -22,10 +22,10 @@ function getUserResponse(){           // get user response and processing it, th
         usertxt =  "please type something here";
     }
 
-    let userHtml = '<p class = "botmsg"><span>' + usertxt + '</span></p>';
+    let userHtml = '<p class = "mine messages"><span>' + usertxt + '</span></p>';
 
     $("#usertxt").val("");
-    $("#ochat").append(userHtml);
+    $("#chat").append(userHtml);
 
     setTimeout(() =>{                      // timer for how long Charles should think before sending his response
         getHResponse(usertxt);
