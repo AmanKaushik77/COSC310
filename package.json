@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "type": "module",
+    "corenlp": "^1.5.2",
+    "corenlp-sentiment": "^1.0.1",
+    "genie-toolkit": "^0.7.0",
+    "wink-pos-tagger": "^2.2.2"
+  }
+  
+}
