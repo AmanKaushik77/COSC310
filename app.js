@@ -25,7 +25,7 @@ function getUserResponse(){           // get user response and processing it, th
     let userHtml = '<p class = "mine messages"><span>' + usertxt + '</span></p>';
 
     $("#usertxt").val("");
-    $("#chat").append(userHtml);
+    $("#chat").append(userHtml);  // jquery is used to append the user text to the chat 
 
     setTimeout(() =>{                      // timer for how long Charles should think before sending his response
         getHResponse(usertxt);
@@ -41,3 +41,9 @@ $("#usertxt").keypress(function(e){  // using jquery to have the function be cal
         getUserResponse();
     }
 })
+
+
+
+
+
+

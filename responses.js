@@ -2,12 +2,16 @@ var productType = 0;            // object identifier
 var budgetType = 0;             // keeps track of the users budger (1 being low, x number being high)
 var count = 0;                  // keeps track of how many convos have been made
 var budget;
-const ptKeys = ["watch", "laptop", "phone", "iphone", "tablet", "ipad"];
-const sizeKeys = ["x-small", "small", "medium", "large"];
+const ptKeys = ["watch", "laptop", "phone", "iphone", "tablet", "ipad", "pc", "desktop", "computer"];
+const sizeKeys = ["x-small", "small", "medium", "x-large", "large"];
 
 
 function getBotResponse(input){     // Charles, hard responses that will be send to back to the app.js file
     input = input.toLowerCase();
+    if(input == "hello" || input == "hi" || input == "hey" || input == "hello " || input == "hi " || input == "hey " ){
+        
+        return greetings();
+    }
     //input = input.trim();
     input = getKey(input);
     // type of product
@@ -35,15 +39,13 @@ function getKey(sen) {
                 return ptKeys[i];
             }
         }
-    }
-    if (count == 2){
+    }else if (count == 2){
         for(var i=0; i<sizeKeys.length; i++){
             if(sen.includes(sizeKeys[i])){
                 return sizeKeys[i];
             }
         }
-    }
-     if(count == 1){
+    }else if(count == 1){
         return sen;
     }
 
@@ -62,9 +64,12 @@ function convoOne(input){
     }else if (input == "tablet" || input == "ipad"){
         productType = 4;
         return "you chose tablet, what is your budget?";
+    }else if (input == "desktop" || input == "pc" || input == "computer"){
+        productType = 5;
+        return ("You chose " + input + ", what is your budget?");
     }else{
         count = 0;
-        return "Sorry, didn't seem to understand, please try again :)";
+        return errorResponse(input);
     }
 }
 
@@ -81,6 +86,9 @@ function convoTwo(budget){
             return "The Apple Watch Series 8 is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else if (budget >= 1099){
             return "The Apple Watch Ultra is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else{
+            count = 1;
+            return errorResponse(input);
         }
     }
     // budget for laptop 
@@ -98,10 +106,10 @@ function convoTwo(budget){
             return "Got it! what size would you prefer (small or large)?";
         }else if (budget >= 3200 ){
             budgetType = 3;
-            return "Got it! what size would you prefer (small or large)?"
+            return "Got it! what size would you prefer (small or large)?";
         }else{
             count = 1;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }
     // Budget for Phone 
@@ -123,7 +131,7 @@ function convoTwo(budget){
             return "Got it! what size would you prefer (x-small, small, medium, large)?";
         }else{
             count = 1;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }
     //Budget for tablet 
@@ -142,7 +150,29 @@ function convoTwo(budget){
             return "Got it! what size would you prefer (small, medium, large)?";
         }else{
             count = 1;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
+        }
+    }
+    if (productType == 5){
+        if(budget < 900){
+            count = 1;
+            return "sorry nothing fits your budget, try again";
+        }else if(budget >= 900 && budget < 1600){
+            budgetType = 1;
+            return "The Mac Mini which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else if(budget >= 1600 && budget < 2500){
+            budgetType = 2;
+            return "Got it! what size would you prefer (small or medium)?";
+        }else if (budget >= 2500 && budget < 8200){
+            budgetType = 3;
+            return "Got it! what size would you prefer (small, medium, large)?";
+        }
+        else if (budget >= 8200){
+            budgetType = 4;
+            return "Got it! what size would you prefer (small, medium, large, or x-large)?";
+        }else{
+            count = 1;
+            return errorResponse(input);
         }
     }
 }
@@ -156,7 +186,7 @@ function convoThree(input){
             return "The MacBook Air (M2, 2022) is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }else if (productType == 2 && budgetType == 2){
         if(input == "small"){
@@ -165,7 +195,7 @@ function convoThree(input){
             return "The MacBook Pro (2021) 14-in is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     } else if(productType == 2 && budgetType == 3){
         if(input == "small"){
@@ -174,7 +204,7 @@ function convoThree(input){
             return "The MacBook Pro (2021) 16-in is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }
     // recomendations for phones
@@ -187,7 +217,7 @@ function convoThree(input){
             return "The IPhone 12 is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }else if (productType == 3 && budgetType == 2){
         if(input == "small"){
@@ -198,7 +228,7 @@ function convoThree(input){
             return "The IPhone 12 is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }else if(productType == 3 && budgetType == 3){
         if (input == "x-small"){
@@ -211,7 +241,7 @@ function convoThree(input){
             return "The IPhone 14 plus is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }else if(productType == 3 && budgetType == 4){
         if (input == "x-small"){
@@ -224,7 +254,7 @@ function convoThree(input){
             return " Both the IPhone 14 and IPhone 14 Pro Max fit this screen size but the IPhone 14 Pro Max is $300 more than the IPhone 14 Plus. A specification comparison can be made on the Apple website to list every one of their differences.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }
     // recommendations for tablets
@@ -237,7 +267,7 @@ function convoThree(input){
             return "The IPad Generation 9 and Generation 10 are the devices for you! They fit the information you have provided, and more information about and comparisons between these devices can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
     }else if(productType == 4 && budgetType == 3){
         if(input == "small"){
@@ -248,7 +278,58 @@ function convoThree(input){
             return "The IPad Pro which comes in the listed sizes is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
         }else{
             count = 2;
-            return "Sorry, didn't seem to understand, please try again :)"
+            return errorResponse(input);
         }
+    }
+    if(productType == 5 && budgetType == 2){
+        if(input == "small"){
+            return "The Mac Mini which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else if(input == "medium"){
+            return "The iMac which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else{
+            count = 2;
+            return errorResponse(input);
+        }
+    }else if (productType == 5 && budgetType == 3){
+        if(input == "small"){
+            return ":The Mac Mini which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+        }else if(input == "medium"){
+            return "The iMac which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else if(input == "large"){
+            return "The Mac Studio which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else{
+            count = 2;
+            return errorResponse(input);
+        }
+    } else if(productType == 5 && budgetType == 4){
+        if(input == "small"){
+            return ":The Mac Mini which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website."
+        }else if(input == "medium"){
+            return "The iMac which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else if(input == "large"){
+            return "The Mac Studio which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else if(input == "x-large"){
+            return "The Mac Pro which comes with different customizations is the device for you! It fits the information you have provided, and more information about this device can be found at the apple website.";
+        }else{
+            count = 2;
+            return errorResponse(input);
+        }
+    }
+}
+
+function errorResponse(input){
+    var errormsg = ["Sorry, didn't seem to understand, please try again :)", "I didnt understand, please try again", "Not sure, could you try again please", "I can't help you with that, please try again", "My knowledge is still expanding, please try again"]
+    var ran = Math.round(Math.random() *errormsg.length);
+        return errormsg[ran];
+    
+}
+
+function greetings(){
+    if(count == 0){ 
+        return "Hello! I am here to assist you in picking your ideal Apple product! YAYYY :D! We can start off by selecting the type of Apple product you wish to buy";
+    }else if(count == 1){
+        return "Hello again! Once we get your budget I can narrow down options for your ideal product! Whats your max budget?";
+    }else if(count == 2){
+        return "Hello again my friend! Once we get your ideal device size I can narrow down options for your ideal product! Whats your ideal sizxe for this device?";
     }
 }
