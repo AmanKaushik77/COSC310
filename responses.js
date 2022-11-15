@@ -333,3 +333,4 @@ function greetings(){
         return "Hello again my friend! Once we get your ideal device size I can narrow down options for your ideal product! Whats your ideal sizxe for this device?";
     }
 }
+exports.convoOne = convoOne;
