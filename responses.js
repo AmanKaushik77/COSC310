@@ -10,7 +10,7 @@ function getBotResponse(input){     // Charles, hard responses that will be send
     input = input.toLowerCase();
     if(input == "hello" || input == "hi" || input == "hey" || input == "hello " || input == "hi " || input == "hey " ){
         
-        return greetings();
+        return greetings(count);
     }
     //input = input.trim();
     input = getKey(input);
@@ -23,11 +23,11 @@ function getBotResponse(input){     // Charles, hard responses that will be send
     if (count == 1){    // convo 2, identifying budgetType from user   
         var budget = parseInt(input);
         count ++;
-        return convoTwo(budget);
+        return convoTwo(productType, budget);
     }
     
     if(count == 2){ // convo 2, idenfying the size the user wants and recomend the ideal product 
-        return convoThree(input);
+        return convoThree(productType, budgetType, input);
     }
 }
 
@@ -74,7 +74,7 @@ function convoOne(input){
 }
 
 
-function convoTwo(budget){
+function convoTwo(productType, budget){
     if (productType == 1){
         if(budget < 330){
             count = 1;
@@ -177,7 +177,7 @@ function convoTwo(budget){
     }
 }
 
-function convoThree(input){
+function convoThree(productType, budgetType, input){
     // recomendations for laptop
     if(productType == 2 && budgetType == 1){
         if(input == "small"){
@@ -324,13 +324,16 @@ function errorResponse(input){
     
 }
 
-function greetings(){
-    if(count == 0){ 
+function greetings(counter){
+    if(counter === 0){ 
         return "Hello! I am here to assist you in picking your ideal Apple product! YAYYY :D! We can start off by selecting the type of Apple product you wish to buy";
-    }else if(count == 1){
+    }else if(counter === 1){
         return "Hello again! Once we get your budget I can narrow down options for your ideal product! Whats your max budget?";
-    }else if(count == 2){
-        return "Hello again my friend! Once we get your ideal device size I can narrow down options for your ideal product! Whats your ideal sizxe for this device?";
+    }else if(counter === 2){
+        return "Hello again my friend! Once we get your ideal device size I can narrow down options for your ideal product! Whats your ideal size for this device?";
     }
 }
 exports.convoOne = convoOne;
+exports.convoTwo = convoTwo;
+exports.convoThree = convoThree;
+exports.greetings = greetings;
