@@ -3,13 +3,13 @@ var text = "that is so bad that we had to sit in line for so long! My feet were 
 
 
 console.log("POS Tagger --------------------")
-POStagger(text);
+POSTagger(text);
 console.log("Sentiment -----------");
 Sentiment(text);
 console.log("NER-----------------------");
 NER(text);
 
-function POStagger(text){
+function POSTagger (text){
 
 var posTagger = require( 'wink-pos-tagger' );
 
