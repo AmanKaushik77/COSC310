@@ -9,8 +9,10 @@ const sizeKeys = ["x-small", "small", "medium", "x-large", "large"];
 function getBotResponse(input){     // Charles, hard responses that will be send to back to the app.js file
     input = input.toLowerCase();
     if(input == "hello" || input == "hi" || input == "hey" || input == "hello " || input == "hi " || input == "hey " ){
+
         
         return greetings(count);
+
     }
     //input = input.trim();
     input = getKey(input);
@@ -334,6 +336,8 @@ function greetings(counter){
     }
 }
 exports.convoOne = convoOne;
+
 exports.convoTwo = convoTwo;
 exports.convoThree = convoThree;
+
 exports.greetings = greetings;
