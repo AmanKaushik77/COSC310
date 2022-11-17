@@ -49,7 +49,7 @@ function convoThree<br/>
 
 All test cases pass successfully.<br/>
 
-![Snippet of test code](https://imgur.com/0GTsvvc)
+![Snippet of test code](https://imgur.com/0GTsvvc)<br/>
 
 
 
