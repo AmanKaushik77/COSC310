@@ -49,7 +49,7 @@ function convoThree<br/>
 
 All test cases pass successfully.<br/>
 
-![Snippet of test run using jest](https://imgur.com/a/Sywk2w7)
+![Snippet of test code](https://imgur.com/0GTsvvc)
 
 
 
