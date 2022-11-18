@@ -23,6 +23,7 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
   - Coverting sentences to lists of words to dictate if the word is a noun, verb, adjective, etc.
   - [Snippet](POSTaggersnip.png)
 - A GUI that has been updated so the user can see conversation history, and the users input.
+  - [Snippet](CharlesGUI.png)
 - Five or more responses that are used for off topic inputs from the user.
    - [Snippet](5differentResponses.png)
 - Charles has a total for 5 topics (4 topics from assignment 2, and 1 new topic added for assignment 3). The topics consist of: 
@@ -46,9 +47,8 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
   
  ## Other Documentation 
  - [Project Report]
- - [WBS (Work Breakdown Structure)]
  - [DFD Level 0](DFDLevel0.md)
  - [DFD level 1](DFDLevel1.md)
  - [Testing Overview](Automated_Unit_Testing.md)
- - [Network Graph]
+ 
  
