@@ -34,9 +34,8 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
  ## Other Documentation 
  - [Project Report]
  - [WBS (Work Breakdown Structure)]
- - [Gantt Chart]
- - [DFD Level 0]
- - [DFD level 1]
+ - [DFD Level 0](DFDLevel0.md)
+ - [DFD level 1](DFDLevel1.md)
  - [Testing Overview](Automated_Unit_Testing.md)
  - [Network Graph]
  
