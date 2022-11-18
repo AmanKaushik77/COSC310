@@ -50,5 +50,6 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
  - [DFD Level 0](DFDLevel0.md)
  - [DFD level 1](DFDLevel1.md)
  - [Testing Overview](Automated_Unit_Testing.md)
+ - [Network Graph](https://github.com/charles-bot-groupTwo/COSC310/network)
  
  
