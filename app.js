@@ -1,4 +1,4 @@
-
+//GLOBAL.document = new JSDOM(html).window.document;
 
 
 function introMessage (){           //intro message pasting 
