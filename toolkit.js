@@ -1,5 +1,5 @@
 
-var text = "that is so bad that we had to sit in line for so long! My feet were hurting soo bad."
+var text = "I am looking to find a new phone for myself"
 
 
 console.log("POS Tagger --------------------")
@@ -28,11 +28,7 @@ function Sentiment(text){
 
 var sentiment = require( 'wink-sentiment' );
 
-
-
     console.log( sentiment( text ) );
-
-
 
 }
 
