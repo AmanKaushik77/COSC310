@@ -46,7 +46,7 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
 
   
  ## Other Documentation 
- - [Project Report]
+ - [Project Report](COSC310Assignement 3.pdf)
  - [DFD Level 0](DFDLevel0.md)
  - [DFD level 1](DFDLevel1.md)
  - [Testing Overview](Automated_Unit_Testing.md)
