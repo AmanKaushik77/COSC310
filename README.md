@@ -23,13 +23,25 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
 ## API's Implemented 
 - JQuery - JavaScript library used to manage the event handling aspect of Charles.
 - WINK API (NLP (Natural Language Processing) toolkits).
-## Toolkits 
+## Toolkits & Features Implimented  
 - Named Entity Recognition 
   - Breaks apart a sentance and goes through to recognize named entities.
+  - [Snippet](NERsnip.png)
 - Sentiment Analysis 
   - Analysis of words in a sentence to determine if the user input is positive or not.
+  - [Snippet](Sentimentsnip.png)
 - POS tagging 
   - Coverting sentences to lists of words to dictate if the word is a noun, verb, adjective, etc.
+  - [Snippet](POSTaggersnip.png)
+- A GUI that has been updated so the user can see conversation history, and the users input.
+- Five or more responses that are used for off topic inputs from the user.
+- Charles has a total for 5 topics (4 topics from assignment 2, and 1 new topic added for assignment 3). The topics consist of: 
+    - Watches
+    - Phones 
+    - Laptops
+    - Tablets
+    - Desktop (New)
+
   
  ## Other Documentation 
  - [Project Report]
