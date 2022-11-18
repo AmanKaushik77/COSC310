@@ -24,6 +24,7 @@ Charles has been developed in HTML, CSS and JavaScript. Here is a brief descript
   - [Snippet](POSTaggersnip.png)
 - A GUI that has been updated so the user can see conversation history, and the users input.
 - Five or more responses that are used for off topic inputs from the user.
+   - [Snippet](5differentResponses.png)
 - Charles has a total for 5 topics (4 topics from assignment 2, and 1 new topic added for assignment 3). The topics consist of: 
     - Watches
     - Phones 
